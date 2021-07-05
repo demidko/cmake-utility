@@ -2,7 +2,7 @@
 
 A cross-platform `C++20` command line tool template with dependency manager, powered by integration
 of [`cmake`](https://cmake.org/)
-with [` conan`](https://conan.io).
+with [`conan`](https://github.com/conan-io/cmake-conan).
 
 ## Usage
 
