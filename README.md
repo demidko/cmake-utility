@@ -1,14 +1,15 @@
-## `Utility`
+# conan-utility
 
 A cross-platform `C++20` command line tool template with dependency manager, powered by integration
 of [`cmake`](https://cmake.org/)
-with [` vcpkg`](https://github.com/microsoft/vcpkg).
+with [` conan`](https://conan.io).
 
-### Usage
+## Usage
 
-Make sure you are signed in to your GitHub account, then just click [`here`](https://github.com/demidko/utility/generate) to use template.
+Make sure you are signed in to your GitHub account, then just
+click [`here`](https://github.com/demidko/conan-utility/generate) to use template.
 
-### Motivation and goals
+## Motivation and goals
 
 In the С++ world, now...
 
@@ -18,34 +19,32 @@ In the С++ world, now...
 * There is no cross-platform build without Qt.
 * These problems overlap, causing troubles for developers.
 
-Therefore, `Utility` is a template for creating and building cross-platform C++ projects with external
-dependencies. `Utility` is a tool like `start.your-technology.io` sites for Java, .NET and Rust.
+Therefore, `conan-utility` is a template for creating and building cross-platform C++ projects with external
+dependencies. `conant-utility` is a tool like `start.your-technology.io` sites for Java, .NET and Rust.
 
-### Features and benefits
+## Features and benefits
 
 * Full compatibility with existing technologies. No build configuration files are added except for the
   traditional `CMakeLists.txt`.
 * Created projects are supported in `CLion`,` Visual Studio`, `VS Code` IDEs.
-* Adding dependencies is done with one command through integration with [`vcpkg`](https://github.com/microsoft/vcpkg).
+* Adding dependencies is done with one command through integration with [`conan`](https://conan.io).
 * A project with all dependencies can be built on different OS without configuration changes.
 
 ### Build
 
-We need [`cmake`](https://cmake.org/download) build system and [`vcpkg`](https://github.com/microsoft/vcpkg) manager
-libraries. It's easy to install with system package manager, `brew` for example.
+We need [`cmake`](https://cmake.org/download) build system and [`conan`](https://conan.io) manager libraries. It's easy
+to install with system package manager, `brew` for example.
 
-1. Install the dependencies:  
-   `vcpkg install` [`catch2`](https://github.com/catchorg/Catch2) [`cli11`](https://github.com/CLIUtils/CLI11) [`fmt`](https://github.com/fmtlib/fmt)  
-   _(If you are using an IDE, you can stop at this step simply by setting `CMake options` as the result
-   of `vcpkg integrate install` command)_
-1. Prepare the directory for building using the dependencies `vcpkg`:  
-   ```cmake `vcpkg integrate install | tail -1 | cut -d \" -f2` -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" -B cmake-build-release```  
-   On Windows, instead of the code in ``` `` ``` quotes, manually substitute the parameter obtained by
-   calling `vcpkg integrate install`.
+1. Prepare the directory for building using the dependencies:
+   ```shell
+   cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" -B cmake-build-release
+   ```
 1. Putting together the directory and tests:
-   `cmake --build cmake-build-release --target all`  
-   After that, the main self-executable utility will appear in the `cmake-build-release` directory under the name `proj`
-   . The tests can be run by launching the `test` file located nearby.
+   ```shell
+   cmake --build cmake-build-release --target all
+   ```  
+   After that, the main self-executable utility will appear in the `cmake-build-release` directory under the
+   name `conan-utility`. The tests can be run by launching the `test` file located nearby.
 
 ### This repository source code conventions
 
