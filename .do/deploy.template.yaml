@@ -1,0 +1,13 @@
+spec:
+  name: utility # TODO change name
+  workers:
+    - name: backend
+      dockerfile_path: Dockerfile
+      github:
+        repo: demidko/timecobot # TODO change repo
+        branch: main
+        deploy_on_push: true
+      envs: # TODO change environment variables
+        - key: TOKEN # example
+          type: SECRET
+          scope: RUN_TIME

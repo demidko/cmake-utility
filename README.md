@@ -1,8 +1,8 @@
-# conan-utility
+# Utility
 
 A cross-platform `C++20` command line tool template with dependency manager, powered by integration
-of [`cmake`](https://cmake.org/)
-with [`conan`](https://github.com/conan-io/cmake-conan).
+of [`CMake`](https://cmake.org/)
+with [`Conan`](https://github.com/conan-io/cmake-conan).
 
 ## Usage
 
@@ -19,34 +19,58 @@ In the С++ world, now...
 * There is no cross-platform build without Qt.
 * These problems overlap, causing troubles for developers.
 
-Therefore, `conan-utility` is a template for creating and building cross-platform C++ projects with external
-dependencies. `conant-utility` is a tool like `start.your-technology.io` sites for Java, .NET and Rust.
+Therefore, `utility` is a template for creating and building cross-platform C++ projects with external
+dependencies. `Utility` is a tool like `start.technology.io` sites for Java, .NET and Rust.
 
 ## Features and benefits
 
 * Full compatibility with existing technologies. No build configuration files are added except for the
   traditional `CMakeLists.txt`.
 * Created projects are supported in `CLion`,` Visual Studio`, `VS Code` IDEs.
+* Dockerfile of executable container and GitHub actions CI already exists by default.
 * Adding dependencies is done with one command through integration with [`conan`](https://conan.io).
 * A project with all dependencies can be built on different OS without configuration changes.
 
-### Build
+## Build
 
-We need [`cmake`](https://cmake.org/download) build system and [`conan`](https://conan.io) manager libraries. It's easy
-to install with system package manager, `brew` for example.
+We need [`CMake`](https://cmake.org/download) build system and [`Conan`](https://conan.io) manager libraries.
 
-1. Prepare the directory for building using the dependencies:
-   ```shell
-   cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" -B cmake-build-release
-   ```
-1. Putting together the directory and tests:
-   ```shell
-   cmake --build cmake-build-release --target all
-   ```  
-   After that, the main self-executable utility will appear in the `cmake-build-release` directory under the
-   name `conan-utility`. The tests can be run by launching the `test` file located nearby.
+Prepare the project for building in release mode:
 
-### This repository source code conventions
+```shell
+cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" -B bin
+```
+
+Building together the application and tests:
+
+```shell
+cmake --build bin --target all
+```  
+
+After that, the main self-executable utility will appear in the `bin` directory under the name `app`. The tests can be
+run by launching the `test` file located nearby.
+
+## Containerization
+
+We need [`Docker`](https://www.docker.com/) installed:
+
+```shell
+docker build . -t utility
+```
+
+After that, we can run the utility in the container (if needed):
+
+```shell
+docker run -it utility
+```
+
+## Deploy
+
+The sample configuration already exists in the `.do` directory. To deploy the application, just click the button.
+
+[![Deploy to DigitalOcean](https://www.deploytodo.com/do-btn-blue-ghost.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/demidko/timecobot2/tree/main)
+
+## Conventions
 
 * The entry point must be located in the `Main.cpp` file for correct build script work.
 * To initialize resources, we using [modern parameter passing by value](https://habr.com/ru/post/460955/), rather than a
