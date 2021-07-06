@@ -1,4 +1,4 @@
-# Utility
+# utility
 
 A cross-platform `C++20` command line tool template with dependency manager, powered by integration
 of [`CMake`](https://cmake.org/)
