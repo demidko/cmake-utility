@@ -29,7 +29,7 @@ dependencies. `Utility` is a tool like `start.technology.io` sites for Java, .NE
 * Created projects are supported in `CLion`,` Visual Studio`, `VS Code` IDEs.
 * Dockerfile of executable container and GitHub actions CI already exists by default.
 * Easy deploy to Digital Ocean.
-* Adding dependencies in `CMakeLists.txt` only with [`Conan`](https://github.com/conan-io/cmake-conan).
+* Adding dependencies [right in CMakeLists.txt](https://github.com/conan-io/cmake-conan) only.
 * A project with all dependencies can be built on different OS without configuration changes.
 
 ## Build
