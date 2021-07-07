@@ -11,25 +11,25 @@ if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
             TLS_VERIFY ON)
 endif()
 include(${CMAKE_BINARY_DIR}/conan.cmake)
-# 1. configure any conan dependency there
+# 1. configure any conan dependency here
 conan_cmake_configure(REQUIRES catch2/2.13.6 tgbot/1.2.1 fmt/8.0.0 GENERATORS cmake_find_package)
 conan_cmake_autodetect(settings)
 conan_cmake_install(PATH_OR_REFERENCE . BUILD missing REMOTE conan-center SETTINGS ${settings})
-# 2. find dependency there
+# 2. find dependency here
 find_package(Catch2)
 find_package(tgbot)
 find_package(fmt)
 
 file(GLOB proj_sources src/*.cpp)
 add_executable(app ${proj_sources})
-# 3. link dependency with executable app there
+# 3. link dependency with executable app here
 target_link_libraries(app PRIVATE tgbot::tgbot fmt::fmt)
 
 #[[Changing the entry point for tests]]
 list(FILTER proj_sources EXCLUDE REGEX ".*Main.cpp$")
 file(GLOB test_sources test/*.cpp)
 add_executable(test ${proj_sources} ${test_sources})
-# 4. link dependency with tests there
+# 4. link dependency with tests here
 target_link_libraries(test PRIVATE Catch2::Catch2 tgbot::tgbot fmt::fmt)
 
 
