@@ -23,7 +23,7 @@ find_package(fmt)
 file(GLOB proj_sources src/*.cpp)
 add_executable(app ${proj_sources})
 # 3. link dependency with executable app here
-target_link_libraries(app PRIVATE tgbot::tgbot fmt::fmt)
+target_link_libraries(app PRIVATE tgbot::tgbot fmt::fmt ICU::icu)
 
 #[[Changing the entry point for tests]]
 list(FILTER proj_sources EXCLUDE REGEX ".*Main.cpp$")
