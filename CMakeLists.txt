@@ -19,12 +19,12 @@ conan_cmake_install(PATH_OR_REFERENCE . BUILD missing REMOTE conan-center SETTIN
 find_package(Catch2)
 find_package(tgbot)
 find_package(fmt)
-find_package(icu)
+find_package(ICU)
 
 file(GLOB proj_sources src/*.cpp)
 add_executable(app ${proj_sources})
 # 3. link dependency with executable app here
-target_link_libraries(app PRIVATE tgbot::tgbot fmt::fmt icu::icu)
+target_link_libraries(app PRIVATE tgbot::tgbot fmt::fmt)
 
 #[[Changing the entry point for tests]]
 list(FILTER proj_sources EXCLUDE REGEX ".*Main.cpp$")
