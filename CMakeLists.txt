@@ -19,6 +19,7 @@ conan_cmake_install(PATH_OR_REFERENCE . BUILD missing REMOTE conan-center SETTIN
 find_package(Catch2)
 find_package(tgbot)
 find_package(fmt)
+find_package(icu)
 
 file(GLOB proj_sources src/*.cpp)
 add_executable(app ${proj_sources})
