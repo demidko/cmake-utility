@@ -11,7 +11,7 @@ if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
             TLS_VERIFY ON)
 endif()
 include(${CMAKE_BINARY_DIR}/conan.cmake)
-# 1. configure any conan dependency here
+# 1. configure any conan dependencies here (all dependencies: https://conan.io/center)
 conan_cmake_configure(REQUIRES catch2/2.13.6 tgbot/1.2.1 fmt/8.0.0 icu/69.1 GENERATORS cmake_find_package)
 conan_cmake_autodetect(settings)
 conan_cmake_install(PATH_OR_REFERENCE . BUILD missing REMOTE conan-center SETTINGS ${settings})
