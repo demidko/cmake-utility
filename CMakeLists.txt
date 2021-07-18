@@ -12,7 +12,7 @@ if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
 endif()
 include(${CMAKE_BINARY_DIR}/conan.cmake)
 # 1. configure any conan dependencies here (all dependencies: https://conan.io/center)
-conan_cmake_configure(REQUIRES catch2/2.13.6 cpr/1.6.2 threadpool/20140926 simdjson/0.9.6  icu/69.1 GENERATORS cmake_find_package)
+conan_cmake_configure(REQUIRES catch2/2.13.6 spdlog/1.8.5 cpr/1.6.2 threadpool/20140926 simdjson/0.9.6 icu/69.1 GENERATORS cmake_find_package)
 conan_cmake_autodetect(settings)
 conan_cmake_install(PATH_OR_REFERENCE . BUILD missing REMOTE conan-center SETTINGS ${settings})
 # 2. find dependency here
