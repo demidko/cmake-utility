@@ -1,4 +1,5 @@
 FROM conanio/clang11 as builder
+USER root
 WORKDIR /project
 COPY src ./src
 COPY test ./test
