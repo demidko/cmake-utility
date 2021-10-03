@@ -34,7 +34,8 @@ dependencies. `Utility` is a tool like `start.technology.io` sites for Java, .NE
 
 ## Build
 
-We need [`CMake`](https://cmake.org/download) build system and [`Conan`](https://conan.io) manager libraries.
+We need [GCC](https://gcc.gnu.org/) or [LLVM](https://llvm.org/) toolset, [CMake](https://cmake.org/download) build
+system and [Conan](https://conan.io) libraries manager.
 
 Prepare the project for building in release mode:
 
