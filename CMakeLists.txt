@@ -31,7 +31,7 @@ add_executable(app ${proj_sources})
 target_link_libraries(app PRIVATE ThreadPool::ThreadPool spdlog::spdlog cpr::cpr simdjson::simdjson ICU::io ICU::i18n ICU::uc ICU::data)
 
 #[[Changing the entry point for tests]]
-list(FILTER proj_sources EXCLUDE REGEX ".*Main.cpp$")
+list(FILTER proj_sources EXCLUDE REGEX ".*/Main.cpp$")
 file(GLOB test_sources test/*.cpp)
 add_executable(test ${proj_sources} ${test_sources})
 # 4. link dependency with tests here
