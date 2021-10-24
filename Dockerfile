@@ -8,6 +8,7 @@ RUN cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" -B ./bin
 RUN cmake --build ./bin --target all
 RUN ./bin/test
 
-FROM alpine as backend
-COPY --from=builder /project/bin/app /app
-ENTRYPOINT ["/app"]
+FROM debian as backend
+WORKDIR root
+COPY --from=builder /project/bin/app ./app
+ENTRYPOINT ["/root/app"]

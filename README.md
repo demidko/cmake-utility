@@ -63,8 +63,10 @@ docker build . -t utility
 After that, we can run the utility in the container (if needed):
 
 ```shell
-docker run -it utility
+docker run -v `pwd`:`pwd` -w `pwd` -it --rm utility
 ```
+
+To clean up docker use `docker system prune -fa`
 
 ## Deploy
 
