@@ -5,7 +5,9 @@ int main(int argc, char **argv) {
   using namespace cpr;
   using namespace std;
 
-  auto page = Get(Url("https://example.com"), VerifySsl(false));
+  auto exampleUrl = Url("https://example.com");
+  auto sslConfig = VerifySsl(false);
+  auto examplePage = Get(exampleUrl, sslConfig);
 
-  cout << page.text;
+  cout << examplePage.text;
 }
