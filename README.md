@@ -52,6 +52,10 @@ cmake --build bin --target all
 After that, the main self-executable utility will appear in the `bin` directory under the name `app`. The tests can be
 run by launching the `test` file located nearby.
 
+### Useful issues
+
+* https://github.com/conan-io/conan/issues/8022 (macOS)
+
 ## Containerization
 
 We need [`Docker`](https://www.docker.com/) installed:
