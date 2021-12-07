@@ -7,7 +7,7 @@ with [`Conan`](https://github.com/conan-io/cmake-conan).
 ## Usage
 
 Make sure you are signed in to your GitHub account, then just
-click [`here`](https://github.com/demidko/utility/generate) to use template.
+click [`here`](https://github.com/demidko/cmake-utility/generate) to use template.
 
 ## Motivation and goals
 
